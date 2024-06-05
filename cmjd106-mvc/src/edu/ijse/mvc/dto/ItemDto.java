@@ -6,26 +6,28 @@ package edu.ijse.mvc.dto;
 
 /**
  *
- * @author ASUS
+ * @author anjan
  */
 public class ItemDto {
+    
     private String code;
-    private String Description;
+    private String description;
     private String packSize;
-    private double unitPrize;
+    private double unitPrice;
     private int qoh;
 
     public ItemDto() {
     }
-    
-    
-    public ItemDto(String code, String Description, String packSize, double unitPrize, int qoh) {
+
+    public ItemDto(String code, String description, String packSize, double unitPrice, int qoh) {
         this.code = code;
-        this.Description = Description;
+        this.description = description;
         this.packSize = packSize;
-        this.unitPrize = unitPrize;
+        this.unitPrice = unitPrice;
         this.qoh = qoh;
     }
+
+    
 
     /**
      * @return the code
@@ -42,17 +44,17 @@ public class ItemDto {
     }
 
     /**
-     * @return the Description
+     * @return the description
      */
     public String getDescription() {
-        return Description;
+        return description;
     }
 
     /**
-     * @param Description the Description to set
+     * @param description the description to set
      */
-    public void setDescription(String Description) {
-        this.Description = Description;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     /**
@@ -70,17 +72,17 @@ public class ItemDto {
     }
 
     /**
-     * @return the unitPrize
+     * @return the unitPrice
      */
-    public double getUnitPrize() {
-        return unitPrize;
+    public double getUnitPrice() {
+        return unitPrice;
     }
 
     /**
-     * @param unitPrize the unitPrize to set
+     * @param unitPrice the unitPrice to set
      */
-    public void setUnitPrize(double unitPrize) {
-        this.unitPrize = unitPrize;
+    public void setUnitPrice(double unitPrice) {
+        this.unitPrice = unitPrice;
     }
 
     /**
@@ -99,7 +101,8 @@ public class ItemDto {
 
     @Override
     public String toString() {
-        return "ItemDto{" + "code=" + code + ", Description=" + Description + ", packSize=" + packSize + ", unitPrize=" + unitPrize + ", qoh=" + qoh + '}';
+        return "ItemDto{" + "code=" + code + ", description=" + description + ", packSize=" + packSize + ", unitPrice=" + unitPrice + ", qoh=" + qoh + '}';
     }
+
     
 }

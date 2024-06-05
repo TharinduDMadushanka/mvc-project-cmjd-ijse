@@ -9,11 +9,11 @@ import edu.ijse.mvc.model.ItemModel;
 
 /**
  *
- * @author ASUS
+ * @author asus
  */
 public class ItemController {
     private ItemModel itemModel;
-    
+
     public ItemController() throws Exception{
         this.itemModel = new ItemModel();
     }
@@ -22,4 +22,5 @@ public class ItemController {
         String resp = itemModel.saveItem(itemDto);
         return resp;
     }
+    
 }

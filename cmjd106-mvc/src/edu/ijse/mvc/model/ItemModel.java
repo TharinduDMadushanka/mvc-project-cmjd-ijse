@@ -9,27 +9,27 @@ import edu.ijse.mvc.dto.ItemDto;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.PreparedStatement;
+
 /**
  *
- * @author ASUS
+ * @author anjan
  */
 public class ItemModel {
-    
     private final Connection connection;
-    
-    public ItemModel() throws ClassNotFoundException,SQLException {
-        this.connection =DBConnection.getInstance().getConnetion();
+
+    public ItemModel() throws ClassNotFoundException, SQLException {
+        this.connection = DBConnection.getInstance().getConnection();
     }
     
-    public String saveItem(ItemDto itemdto) throws Exception{
-        String sql ="INSERT INTO VALUES(?,?,?,?,?)";
+    public String saveItem(ItemDto itemDto) throws Exception{
+        String sql = "INSERT INTO item VALUES(?,?,?,?,?)";
         
         PreparedStatement statement = connection.prepareStatement(sql);
-        statement.setString(1,itemdto.getCode());
-        statement.setString(2,itemdto.getDescription());
-        statement.setString(3,itemdto.getPackSize());
-        statement.setDouble(4,itemdto.getUnitPrize());
-        statement.setInt(5,itemdto.getQoh());
+        statement.setString(1, itemDto.getCode());
+        statement.setString(2, itemDto.getDescription());
+        statement.setString(3, itemDto.getPackSize());
+        statement.setDouble(4, itemDto.getUnitPrice());
+        statement.setInt(5, itemDto.getQoh());
         
         return statement.executeUpdate() >0 ? "Success" : "Fail";
     }
