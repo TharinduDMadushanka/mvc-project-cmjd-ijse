@@ -4,6 +4,8 @@
  */
 package edu.ijse.mvc.view;
 
+import edu.ijse.mvc.dto.ItemDto;
+
 /**
  *
  * @author ASUS
@@ -264,7 +266,7 @@ public class ItemView extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 
     private void saveItem(){
-        
+        ItemDto dto = new ItemDto(txtCode.getText());
     }
 }
 
