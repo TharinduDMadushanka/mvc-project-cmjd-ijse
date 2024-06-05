@@ -4,19 +4,25 @@
  */
 package edu.ijse.mvc.view;
 
+import edu.ijse.mvc.controller.ItemController;
 import edu.ijse.mvc.dto.ItemDto;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
  * @author ASUS
  */
 public class ItemView extends javax.swing.JFrame {
+    
+    private ItemController itemController;
 
     /**
      * Creates new form ItemView
      */
-    public ItemView() {
+    public ItemView() throws Exception {
         initComponents();
+        itemController = new ItemController();
     }
 
     /**
@@ -268,7 +274,13 @@ public class ItemView extends javax.swing.JFrame {
     private void saveItem(){
         
         ItemDto dto =new ItemDto(txtCode.getText(),txtDescription.getText(),txtPack.getText(),Double.parseDouble(txtUnitprice.getText()),Integer.parseInt(txtQoh.getText()));
-        System.out.println(dto.toString());
+        
+        try {
+            String resp = itemController.saveItem(dto);
+            System.out.println(resp);
+        } catch (Exception ex) {
+            Logger.getLogger(ItemView.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 }
 
