@@ -36,11 +36,11 @@
                           <Group type="102" attributes="0">
                               <EmptySpace max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="1" attributes="0">
-                                  <Component id="textCode4" min="-2" pref="157" max="-2" attributes="0"/>
+                                  <Component id="txtQoh" min="-2" pref="157" max="-2" attributes="0"/>
                                   <Group type="102" alignment="1" attributes="0">
                                       <Component id="lblUnitPrize" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="textCode3" min="-2" pref="157" max="-2" attributes="0"/>
+                                      <Component id="txtUnitprice" min="-2" pref="157" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="1" attributes="0">
                                       <Component id="lblQoh" min="-2" pref="57" max="-2" attributes="0"/>
@@ -58,7 +58,7 @@
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-                              <Component id="textCode2" min="-2" pref="157" max="-2" attributes="0"/>
+                              <Component id="txtPack" min="-2" pref="157" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
                           </Group>
                       </Group>
@@ -67,8 +67,8 @@
                       <Component id="lblDescription" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="textCode1" min="-2" pref="398" max="-2" attributes="0"/>
-                          <Component id="textCode" alignment="0" min="-2" pref="157" max="-2" attributes="0"/>
+                          <Component id="txtDescription" min="-2" pref="398" max="-2" attributes="0"/>
+                          <Component id="txtCode" alignment="0" min="-2" pref="157" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="340" max="-2" attributes="0"/>
                   </Group>
@@ -83,21 +83,21 @@
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="lblCode" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="textCode" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtCode" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="lblUnitPrize" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="textCode3" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtUnitprice" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="lblDescription" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="lblQoh" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="textCode4" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="textCode1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtQoh" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtDescription" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="lblPackSize" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="textCode2" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtPack" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -131,7 +131,7 @@
         <Property name="text" type="java.lang.String" value="Code"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="textCode">
+    <Component class="javax.swing.JTextField" name="txtCode">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="18" style="0"/>
@@ -146,14 +146,14 @@
         <Property name="text" type="java.lang.String" value="Description"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="textCode1">
+    <Component class="javax.swing.JTextField" name="txtDescription">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="18" style="0"/>
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="textCode1ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtDescriptionActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="lblPackSize">
@@ -164,14 +164,14 @@
         <Property name="text" type="java.lang.String" value="Pack Size"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="textCode2">
+    <Component class="javax.swing.JTextField" name="txtPack">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="18" style="0"/>
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="textCode2ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtPackActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="lblUnitPrize">
@@ -182,14 +182,14 @@
         <Property name="text" type="java.lang.String" value="Unit Prize"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="textCode3">
+    <Component class="javax.swing.JTextField" name="txtUnitprice">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="18" style="0"/>
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="textCode3ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtUnitpriceActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="lblQoh">
@@ -200,7 +200,7 @@
         <Property name="text" type="java.lang.String" value="QoH"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="textCode4">
+    <Component class="javax.swing.JTextField" name="txtQoh">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="18" style="0"/>

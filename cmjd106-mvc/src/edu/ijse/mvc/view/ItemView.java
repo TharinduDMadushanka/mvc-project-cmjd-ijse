@@ -30,15 +30,15 @@ public class ItemView extends javax.swing.JFrame {
 
         lblTitle = new javax.swing.JLabel();
         lblCode = new javax.swing.JLabel();
-        textCode = new javax.swing.JTextField();
+        txtCode = new javax.swing.JTextField();
         lblDescription = new javax.swing.JLabel();
-        textCode1 = new javax.swing.JTextField();
+        txtDescription = new javax.swing.JTextField();
         lblPackSize = new javax.swing.JLabel();
-        textCode2 = new javax.swing.JTextField();
+        txtPack = new javax.swing.JTextField();
         lblUnitPrize = new javax.swing.JLabel();
-        textCode3 = new javax.swing.JTextField();
+        txtUnitprice = new javax.swing.JTextField();
         lblQoh = new javax.swing.JLabel();
-        textCode4 = new javax.swing.JTextField();
+        txtQoh = new javax.swing.JTextField();
         btnUpdate = new javax.swing.JButton();
         btnDelete = new javax.swing.JButton();
         btnSave = new javax.swing.JButton();
@@ -53,42 +53,42 @@ public class ItemView extends javax.swing.JFrame {
         lblCode.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lblCode.setText("Code");
 
-        textCode.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        txtCode.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
         lblDescription.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lblDescription.setText("Description");
 
-        textCode1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        textCode1.addActionListener(new java.awt.event.ActionListener() {
+        txtDescription.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        txtDescription.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textCode1ActionPerformed(evt);
+                txtDescriptionActionPerformed(evt);
             }
         });
 
         lblPackSize.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lblPackSize.setText("Pack Size");
 
-        textCode2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        textCode2.addActionListener(new java.awt.event.ActionListener() {
+        txtPack.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        txtPack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textCode2ActionPerformed(evt);
+                txtPackActionPerformed(evt);
             }
         });
 
         lblUnitPrize.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lblUnitPrize.setText("Unit Prize");
 
-        textCode3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        textCode3.addActionListener(new java.awt.event.ActionListener() {
+        txtUnitprice.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        txtUnitprice.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textCode3ActionPerformed(evt);
+                txtUnitpriceActionPerformed(evt);
             }
         });
 
         lblQoh.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lblQoh.setText("QoH");
 
-        textCode4.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        txtQoh.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
         btnUpdate.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         btnUpdate.setText("Update");
@@ -130,11 +130,11 @@ public class ItemView extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(textCode4, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtQoh, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(lblUnitPrize)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(textCode3, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(txtUnitprice, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(lblQoh, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(190, 190, 190))
@@ -147,14 +147,14 @@ public class ItemView extends javax.swing.JFrame {
                                 .addGap(43, 43, 43))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(33, 33, 33)
-                                .addComponent(textCode2, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtPack, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(lblDescription)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(textCode1, javax.swing.GroupLayout.PREFERRED_SIZE, 398, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(textCode, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtDescription, javax.swing.GroupLayout.PREFERRED_SIZE, 398, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtCode, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(340, 340, 340))))
         );
         layout.setVerticalGroup(
@@ -164,19 +164,19 @@ public class ItemView extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblCode)
-                    .addComponent(textCode, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtCode, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblUnitPrize)
-                    .addComponent(textCode3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtUnitprice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblDescription)
                     .addComponent(lblQoh)
-                    .addComponent(textCode4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(textCode1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtQoh, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtDescription, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblPackSize)
-                    .addComponent(textCode2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtPack, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(28, 28, 28)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnUpdate)
@@ -188,13 +188,13 @@ public class ItemView extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void textCode1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textCode1ActionPerformed
+    private void txtDescriptionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDescriptionActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_textCode1ActionPerformed
+    }//GEN-LAST:event_txtDescriptionActionPerformed
 
-    private void textCode3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textCode3ActionPerformed
+    private void txtUnitpriceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUnitpriceActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_textCode3ActionPerformed
+    }//GEN-LAST:event_txtUnitpriceActionPerformed
 
     private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
         // TODO add your handling code here:
@@ -209,9 +209,9 @@ public class ItemView extends javax.swing.JFrame {
         saveItem();
     }//GEN-LAST:event_btnSaveActionPerformed
 
-    private void textCode2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textCode2ActionPerformed
+    private void txtPackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPackActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_textCode2ActionPerformed
+    }//GEN-LAST:event_txtPackActionPerformed
 
     /**
      * @param args the command line arguments
@@ -258,15 +258,17 @@ public class ItemView extends javax.swing.JFrame {
     private javax.swing.JLabel lblQoh;
     private javax.swing.JLabel lblTitle;
     private javax.swing.JLabel lblUnitPrize;
-    private javax.swing.JTextField textCode;
-    private javax.swing.JTextField textCode1;
-    private javax.swing.JTextField textCode2;
-    private javax.swing.JTextField textCode3;
-    private javax.swing.JTextField textCode4;
+    private javax.swing.JTextField txtCode;
+    private javax.swing.JTextField txtDescription;
+    private javax.swing.JTextField txtPack;
+    private javax.swing.JTextField txtQoh;
+    private javax.swing.JTextField txtUnitprice;
     // End of variables declaration//GEN-END:variables
 
     private void saveItem(){
-        ItemDto dto = new ItemDto(txtCode.getText());
+        
+        ItemDto dto =new ItemDto(txtCode.getText(),txtDescription.getText(),txtPack.getText(),Double.parseDouble(txtUnitprice),Integer.parseInt(txtQoh));
+        System.out.println(dto.toString());
     }
 }
 
