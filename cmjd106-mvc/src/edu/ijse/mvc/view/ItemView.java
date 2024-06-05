@@ -204,6 +204,7 @@ public class ItemView extends javax.swing.JFrame {
 
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
         // TODO add your handling code here:
+        saveItem();
     }//GEN-LAST:event_btnSaveActionPerformed
 
     private void textCode2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textCode2ActionPerformed
@@ -261,4 +262,9 @@ public class ItemView extends javax.swing.JFrame {
     private javax.swing.JTextField textCode3;
     private javax.swing.JTextField textCode4;
     // End of variables declaration//GEN-END:variables
+
+    private void saveItem(){
+        
+    }
 }
+
