@@ -267,7 +267,7 @@ public class ItemView extends javax.swing.JFrame {
 
     private void saveItem(){
         
-        ItemDto dto =new ItemDto(txtCode.getText(),txtDescription.getText(),txtPack.getText(),Double.parseDouble(txtUnitprice),Integer.parseInt(txtQoh));
+        ItemDto dto =new ItemDto(txtCode.getText(),txtDescription.getText(),txtPack.getText(),Double.parseDouble(txtUnitprice.getText()),Integer.parseInt(txtQoh.getText()));
         System.out.println(dto.toString());
     }
 }
