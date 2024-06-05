@@ -1,6 +1,8 @@
 
 package edu.ijse.mvc;
 
+import edu.ijse.mvc.view.ItemView;
+
 /**
  *
  * @author ASUS
@@ -12,7 +14,7 @@ public class Main {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        
+        new ItemView().setVisible(true);
     }
     
 }
