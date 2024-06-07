@@ -4,17 +4,21 @@
  */
 package edu.ijse.mvc.view;
 
+import edu.ijse.mvc.controller.CustomerController;
+
 /**
  *
  * @author ASUS
  */
 public class CustomerView extends javax.swing.JFrame {
 
+    private CustomerController customerController;
     /**
      * Creates new form CustomerView
      */
-    public CustomerView() {
+    public CustomerView() throws Exception {
         initComponents();
+        customerController =new CustomerController();
     }
 
     /**
@@ -345,4 +349,13 @@ public class CustomerView extends javax.swing.JFrame {
     private javax.swing.JTextField txtSalary;
     private javax.swing.JTextField txtTitle;
     // End of variables declaration//GEN-END:variables
+
+    private void saveCustomer(){
+    
+        
+        
+    }
+    
 }
+
+
