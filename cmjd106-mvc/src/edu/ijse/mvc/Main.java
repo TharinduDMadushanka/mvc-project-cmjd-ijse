@@ -1,6 +1,7 @@
 
 package edu.ijse.mvc;
 
+import edu.ijse.mvc.view.CustomerView;
 import edu.ijse.mvc.view.ItemView;
 
 /**
@@ -15,6 +16,7 @@ public class Main {
     public static void main(String[] args) throws Exception {
         // TODO code application logic here
         new ItemView().setVisible(true);
+        new CustomerView().setVisible(true);
     }
     
 }
