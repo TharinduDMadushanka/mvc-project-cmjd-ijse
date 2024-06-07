@@ -5,6 +5,9 @@
 package edu.ijse.mvc.view;
 
 import edu.ijse.mvc.controller.CustomerController;
+import edu.ijse.mvc.dto.CustomerDto;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -39,7 +42,7 @@ public class CustomerView extends javax.swing.JFrame {
         txtTitle = new javax.swing.JTextField();
         txtName = new javax.swing.JTextField();
         txtDob = new javax.swing.JTextField();
-        txtId = new javax.swing.JTextField();
+        txtAddress = new javax.swing.JTextField();
         txtSalary = new javax.swing.JTextField();
         lblPostal = new javax.swing.JLabel();
         lblAddress = new javax.swing.JLabel();
@@ -76,9 +79,9 @@ public class CustomerView extends javax.swing.JFrame {
         lblName.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lblName.setText("Cust. Name:");
 
-        txtId.addActionListener(new java.awt.event.ActionListener() {
+        txtAddress.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtIdActionPerformed(evt);
+                txtAddressActionPerformed(evt);
             }
         });
 
@@ -208,7 +211,7 @@ public class CustomerView extends javax.swing.JFrame {
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addComponent(lblAddress, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addComponent(txtAddress, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addGap(60, 60, 60))
         );
         layout.setVerticalGroup(
@@ -218,7 +221,7 @@ public class CustomerView extends javax.swing.JFrame {
                 .addGap(20, 20, 20)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblId, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtAddress, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblAddress, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtId1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
@@ -254,9 +257,9 @@ public class CustomerView extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIdActionPerformed
+    private void txtAddressActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAddressActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtIdActionPerformed
+    }//GEN-LAST:event_txtAddressActionPerformed
 
     private void txtSalaryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSalaryActionPerformed
         // TODO add your handling code here:
@@ -339,9 +342,9 @@ public class CustomerView extends javax.swing.JFrame {
     private javax.swing.JLabel lblProvince;
     private javax.swing.JLabel lblSalary;
     private javax.swing.JLabel lblTitle;
+    private javax.swing.JTextField txtAddress;
     private javax.swing.JTextField txtCity;
     private javax.swing.JTextField txtDob;
-    private javax.swing.JTextField txtId;
     private javax.swing.JTextField txtId1;
     private javax.swing.JTextField txtName;
     private javax.swing.JTextField txtPostal;
@@ -352,10 +355,17 @@ public class CustomerView extends javax.swing.JFrame {
 
     private void saveCustomer(){
     
+        CustomerDto dto= new CustomerDto(txtId1.getText(),txtTitle.getText(),txtName.getText(),txtDob.getText(),
+                         Double.parseDouble(txtSalary.getText()),txtAddress.getText(),txtCity.getText(),txtProvince.getText(),
+                            txtPostal.getText());
         
-        
+        try {
+            String resp =customerController.saveCustomer(dto);
+            System.out.println(resp);
+        } catch (Exception ex) {
+            Logger.getLogger(CustomerView.class.getName()).log(Level.SEVERE, null, ex);
+        }      
     }
-    
 }
 
 
