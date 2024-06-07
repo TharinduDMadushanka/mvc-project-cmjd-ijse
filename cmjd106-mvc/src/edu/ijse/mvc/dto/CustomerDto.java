@@ -112,7 +112,4 @@ public class CustomerDto {
     public String toString() {
         return "CustomerDto{" + "id=" + id + ", title=" + title + ", name=" + name + ", dob=" + dob + ", salary=" + salary + ", address=" + address + ", city=" + city + ", province=" + province + ", postal=" + postal + '}';
     }
-    
-    
-    
 }
