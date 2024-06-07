@@ -36,6 +36,8 @@ public class CustomerModel {
        statement.setString(7, customerDto.getCity());
        statement.setString(8, customerDto.getProvince());
        statement.setString(9, customerDto.getPostal());
+       
       
+       return statement.executeUpdate() >0 ? "Success" : "Fail";
    }
 }
