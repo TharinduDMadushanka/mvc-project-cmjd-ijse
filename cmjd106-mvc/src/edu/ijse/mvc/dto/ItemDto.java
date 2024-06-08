@@ -103,6 +103,4 @@ public class ItemDto {
     public String toString() {
         return "ItemDto{" + "code=" + code + ", description=" + description + ", packSize=" + packSize + ", unitPrice=" + unitPrice + ", qoh=" + qoh + '}';
     }
-
-    
 }

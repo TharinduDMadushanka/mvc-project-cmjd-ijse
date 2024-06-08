@@ -318,12 +318,13 @@ public class ItemView extends javax.swing.JFrame {
         txtQoh.setText("");
     }
     
+    // show all data in db
     private void loadTable() {
         try {
             String columns[]  ={"Item Id", "Item Description", "Pack Size", "Unit Price", "QoH"};
-            DefaultTableModel dtm = new DefaultTableModel(columns, 0){
+            DefaultTableModel dtm = new DefaultTableModel(columns,0){
                 @Override
-                public boolean isCellEditable(int row, int column){
+                public boolean isCellEditable(int row, int column){ // table rows editable disconnect
                     return false;
                 }
             };

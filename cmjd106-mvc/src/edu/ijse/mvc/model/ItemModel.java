@@ -43,8 +43,7 @@ public class ItemModel {
 
         ArrayList<ItemDto> itemDtos = new ArrayList<>();
 
-
-        while (rst.next()) {            
+        while (rst.next()) { // loop through all data in rst           
             ItemDto dto = new ItemDto(rst.getString("ItemCode"), rst.getString("Description"), rst.getString("PackSize"),
                     rst.getDouble("UnitPrice"), rst.getInt("QtyOnHand"));
             itemDtos.add(dto);
