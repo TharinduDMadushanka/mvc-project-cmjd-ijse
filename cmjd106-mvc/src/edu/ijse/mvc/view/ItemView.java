@@ -389,5 +389,8 @@ public class ItemView extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(this, "Error at delete Data.");
     }
 }
+    
+    private void updateItem(){
+    }
 }
 
