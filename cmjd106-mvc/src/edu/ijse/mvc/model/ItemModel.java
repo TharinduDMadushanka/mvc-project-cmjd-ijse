@@ -71,16 +71,17 @@ public class ItemModel {
         return statement.executeUpdate() >0 ? "Success" : "Fail";
 
     }
-    public String updateItem(ItemDto itemDto)throws Exception{
-        String sql = "UPDATE FROM item VALUES(?,?,?,?,?)";
-        
+    public String updateItem(ItemDto itemDto) throws Exception{
+        String sql = "UPDATE ITEM SET Description = ?, PackSize = ?, UnitPrice = ?, QtyOnHand = ? WHERE ItemCode = ?";
+
         PreparedStatement statement = connection.prepareStatement(sql);
-        statement.setString(1, itemDto.getCode());
-        statement.setString(2, itemDto.getDescription());
-        statement.setString(3, itemDto.getPackSize());
-        statement.setDouble(4, itemDto.getUnitPrice());
-        statement.setInt(5, itemDto.getQoh());
-        
+
+        statement.setString(1, itemDto.getDescription());
+        statement.setString(2, itemDto.getPackSize());
+        statement.setDouble(3, itemDto.getUnitPrice());
+        statement.setInt(4, itemDto.getQoh());
+        statement.setString(5, itemDto.getCode());
+
         return statement.executeUpdate() >0 ? "Success" : "Fail";
     }
 }

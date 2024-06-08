@@ -233,6 +233,7 @@ public class ItemView extends javax.swing.JFrame {
 
     private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
         // TODO add your handling code here:
+        updateItem();
     }//GEN-LAST:event_btnUpdateActionPerformed
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
@@ -390,7 +391,17 @@ public class ItemView extends javax.swing.JFrame {
     }
 }
     
-    private void updateItem(){
+    private void updateItem() {
+        try {
+            ItemDto itemDto = new ItemDto(txtCode.getText() ,txtDescription.getText(), txtPack.getText(), Double.parseDouble(txtUnitprice.getText()), Integer.parseInt(txtQoh.getText()));
+            String resp = itemController.updateItem(itemDto);
+            JOptionPane.showMessageDialog(this, resp);
+            loadTable();
+            clearForm();
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Error at update Item");
+        }
     }
 }
 
