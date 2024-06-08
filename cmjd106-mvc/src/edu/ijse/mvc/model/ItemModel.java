@@ -63,4 +63,10 @@ public class ItemModel {
         }
         return null;
     }
+    public String deleteItem(String code) throws SQLException {
+    String sql = "DELETE FROM item WHERE code = ?";
+    PreparedStatement statement = connection.prepareStatement(sql);
+    statement.setString(1, code);
+    return statement.executeUpdate() > 0 ? "Success" : "Fail";
+    }
 }

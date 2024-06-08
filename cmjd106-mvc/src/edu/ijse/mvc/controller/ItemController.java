@@ -32,4 +32,7 @@ public class ItemController {
         ItemDto itemDto =itemModel.getItem(itemId);
         return itemDto;
     }
+    public String deleteItem(String code) throws Exception {
+        return itemModel.deleteItem(code);
+    }
 }
