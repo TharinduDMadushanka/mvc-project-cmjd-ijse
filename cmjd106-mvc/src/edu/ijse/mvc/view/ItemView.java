@@ -8,6 +8,7 @@ import edu.ijse.mvc.controller.ItemController;
 import edu.ijse.mvc.dto.ItemDto;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -277,10 +278,20 @@ public class ItemView extends javax.swing.JFrame {
         
         try {
             String resp = itemController.saveItem(dto);
-            System.out.println(resp);
+            JOptionPane.showMessageDialog(this, resp);
+            clearForm();
         } catch (Exception ex) {
             Logger.getLogger(ItemView.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(this, "Error at save Data.");
         }
+    }
+    
+    private void clearForm(){
+        txtCode.setText("");
+        txtDescription.setText("");
+        txtPack.setText("");
+        txtUnitprice.setText("");
+        txtQoh.setText("");
     }
 }
 
