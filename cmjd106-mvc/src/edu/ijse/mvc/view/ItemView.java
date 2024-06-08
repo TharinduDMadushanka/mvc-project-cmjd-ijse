@@ -303,6 +303,7 @@ public class ItemView extends javax.swing.JFrame {
             String resp = itemController.saveItem(dto);
             JOptionPane.showMessageDialog(this, resp);
             clearForm();
+            loadTable(); //after saving load and update the table
         } catch (Exception ex) {
             Logger.getLogger(ItemView.class.getName()).log(Level.SEVERE, null, ex);
             JOptionPane.showMessageDialog(this, "Error at save Data.");
