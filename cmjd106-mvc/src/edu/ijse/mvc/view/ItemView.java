@@ -137,6 +137,11 @@ public class ItemView extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        tblItem.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblItemMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(tblItem);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -216,6 +221,8 @@ public class ItemView extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    
+    
     private void txtDescriptionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDescriptionActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtDescriptionActionPerformed
@@ -236,10 +243,15 @@ public class ItemView extends javax.swing.JFrame {
         // TODO add your handling code here:
         saveItem();
     }//GEN-LAST:event_btnSaveActionPerformed
-
+  
     private void txtPackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPackActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtPackActionPerformed
+
+    private void tblItemMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblItemMouseClicked
+        // TODO add your handling code here:
+        searchItem();
+    }//GEN-LAST:event_tblItemMouseClicked
 
     /**
      * @param args the command line arguments
@@ -338,6 +350,26 @@ public class ItemView extends javax.swing.JFrame {
             }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, "Error at Loading Data to Item Table");
+        }
+    }
+    
+    private void searchItem() {
+        try {
+            String itemId = tblItem.getValueAt(tblItem.getSelectedRow(), 0).toString();
+            ItemDto dto = itemController.searchItem(itemId);
+
+            if (dto != null) {
+                txtCode.setText(dto.getCode());
+                txtDescription.setText(dto.getDescription());
+                txtPack.setText(dto.getPackSize());
+                txtUnitprice.setText(Double.toString(dto.getUnitPrice()));
+                txtQoh.setText(Integer.toString(dto.getQoh()));
+            } else {
+                JOptionPane.showMessageDialog(this, "Item Not Found");
+            }
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Error at loading Item");
         }
     }
 }
