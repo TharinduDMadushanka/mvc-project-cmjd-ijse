@@ -189,7 +189,7 @@ public class ItemView extends javax.swing.JFrame {
                     .addComponent(btnUpdate)
                     .addComponent(btnDelete)
                     .addComponent(btnSave))
-                .addGap(0, 233, Short.MAX_VALUE))
+                .addGap(0, 392, Short.MAX_VALUE))
         );
 
         pack();
@@ -272,11 +272,11 @@ public class ItemView extends javax.swing.JFrame {
     private javax.swing.JTextField txtUnitprice;
     // End of variables declaration//GEN-END:variables
 
+    // Save data
     private void saveItem(){
-        
+        try {            
         ItemDto dto =new ItemDto(txtCode.getText(),txtDescription.getText(),txtPack.getText(),Double.parseDouble(txtUnitprice.getText()),Integer.parseInt(txtQoh.getText()));
         
-        try {
             String resp = itemController.saveItem(dto);
             JOptionPane.showMessageDialog(this, resp);
             clearForm();
@@ -286,6 +286,7 @@ public class ItemView extends javax.swing.JFrame {
         }
     }
     
+    // clear form after saving data
     private void clearForm(){
         txtCode.setText("");
         txtDescription.setText("");
