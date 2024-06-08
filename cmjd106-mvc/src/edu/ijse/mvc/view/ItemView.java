@@ -9,6 +9,7 @@ import edu.ijse.mvc.dto.ItemDto;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -24,6 +25,7 @@ public class ItemView extends javax.swing.JFrame {
     public ItemView() throws Exception {
         initComponents();
         itemController = new ItemController();
+        loadTable();
     }
 
     /**
@@ -206,8 +208,8 @@ public class ItemView extends javax.swing.JFrame {
                     .addComponent(btnDelete)
                     .addComponent(btnSave))
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 325, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 90, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 409, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pack();
@@ -313,6 +315,21 @@ public class ItemView extends javax.swing.JFrame {
         txtPack.setText("");
         txtUnitprice.setText("");
         txtQoh.setText("");
+    }
+    
+    private void loadTable(){
+    
+        try {
+            String columns[]={"Item ID","Item Descrition","Pack Size","Unit Prize","QoH"};
+            DefaultTableModel dtm =new DefaultTableModel(columns,0){
+                @Override
+                public boolean isCellEditable(int row,int column){
+                    return false;
+                }
+            };
+            tblItem.setModel(dtm);
+        } catch (Exception e) {
+        }
     }
 }
 
