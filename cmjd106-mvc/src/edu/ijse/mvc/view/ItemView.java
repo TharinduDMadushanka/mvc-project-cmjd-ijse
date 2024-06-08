@@ -6,6 +6,7 @@ package edu.ijse.mvc.view;
 
 import edu.ijse.mvc.controller.ItemController;
 import edu.ijse.mvc.dto.ItemDto;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -317,18 +318,24 @@ public class ItemView extends javax.swing.JFrame {
         txtQoh.setText("");
     }
     
-    private void loadTable(){
-    
+    private void loadTable() {
         try {
-            String columns[]={"Item ID","Item Descrition","Pack Size","Unit Prize","QoH"};
-            DefaultTableModel dtm =new DefaultTableModel(columns,0){
+            String columns[]  ={"Item Id", "Item Description", "Pack Size", "Unit Price", "QoH"};
+            DefaultTableModel dtm = new DefaultTableModel(columns, 0){
                 @Override
-                public boolean isCellEditable(int row,int column){
+                public boolean isCellEditable(int row, int column){
                     return false;
                 }
             };
             tblItem.setModel(dtm);
+
+            ArrayList<ItemDto> itemDtos = itemController.getAllItem();
+            for(ItemDto dto : itemDtos){
+                Object[] rowDate = {dto.getCode(), dto.getDescription(), dto.getPackSize(), dto.getUnitPrice(), dto.getQoh()};
+                dtm.addRow(rowDate);
+            }
         } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Error at Loading Data to Item Table");
         }
     }
 }

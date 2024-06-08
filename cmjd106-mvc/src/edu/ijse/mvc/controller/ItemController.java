@@ -6,6 +6,7 @@ package edu.ijse.mvc.controller;
 
 import edu.ijse.mvc.dto.ItemDto;
 import edu.ijse.mvc.model.ItemModel;
+import java.util.ArrayList;
 
 /**
  *
@@ -23,4 +24,8 @@ public class ItemController {
         return resp;
     }
     
+    public ArrayList<ItemDto> getAllItem() throws Exception{
+        ArrayList<ItemDto> itemDtos = itemModel.getAllItem();
+        return itemDtos;
+    }
 }
