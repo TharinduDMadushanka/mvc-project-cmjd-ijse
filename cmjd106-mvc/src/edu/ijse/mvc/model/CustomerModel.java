@@ -72,4 +72,13 @@ public class CustomerModel {
        }
        return null;
    }
+   
+   public String deleteCustomer(String customerId) throws Exception{
+        String sql = "DELETE FROM customer WHERE CustID = ?";
+        PreparedStatement statement = connection.prepareStatement(sql);
+        statement.setString(1, customerId);
+
+        return statement.executeUpdate() >0 ? "Success" : "Fail";
+
+    }
 }
