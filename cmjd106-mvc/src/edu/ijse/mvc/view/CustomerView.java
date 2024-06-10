@@ -431,6 +431,28 @@ public class CustomerView extends javax.swing.JFrame {
 // show clicked data row   
    private void searchCustomer(){
        
+       try {
+           
+           String custId=tblCustomer.getValueAt(tblCustomer.getSelectedRow(), 0).toString();
+           CustomerDto dto =customerController.searchCustomer(custId);
+           
+           if (dto!=null) {
+               txtId1.setText(dto.getId());
+               txtTitle.setText(dto.getTitle());
+               txtName.setText(dto.getName());
+               txtDob.setText(dto.getDob());
+               txtSalary.setText(Double.toString(dto.getSalary()));
+               txtAddress.setText(dto.getAddress());
+               txtCity.setText(dto.getCity());
+               txtProvince.setText(dto.getProvince());
+               txtPostal.setText(dto.getPostal());
+           }else{
+               JOptionPane.showMessageDialog(this, "Customer Not Found");
+           }
+           
+       } catch (Exception e) {
+           JOptionPane.showMessageDialog(this, "Error at loading Customer");
+       }
    }
 }
 
