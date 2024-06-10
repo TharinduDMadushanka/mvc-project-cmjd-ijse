@@ -49,7 +49,7 @@ public class CustomerModel {
        ArrayList<CustomerDto> customerDtos=new ArrayList<>();
        
        while (rst.next()) {           
-           CustomerDto dto=new CustomerDto(rst.getString("CustID"),rst.getString("CustTitle"),rst.getString("CustName"),rst.getDate(DOB),
+           CustomerDto dto=new CustomerDto(rst.getString("CustID"),rst.getString("CustTitle"),rst.getString("CustName"),rst.getString("DOB"),
            rst.getDouble("salary"),rst.getString("CustAddress"),rst.getString("City"),rst.getString("Province"),rst.getString("PostalCode"));
            
            customerDtos.add(dto);
