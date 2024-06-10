@@ -311,6 +311,7 @@ public class CustomerView extends javax.swing.JFrame {
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
         // TODO add your handling code here:
+        deleteCustomer();
     }//GEN-LAST:event_btnDeleteActionPerformed
 
     private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
@@ -462,6 +463,27 @@ public class CustomerView extends javax.swing.JFrame {
            
        } catch (Exception e) {
            JOptionPane.showMessageDialog(this, "Error at loading Customer");
+       }
+   }
+   
+   private void deleteCustomer(){
+  
+       try {
+           
+           String custId=txtId1.getText();
+           if(custId.isEmpty()){
+               JOptionPane.showMessageDialog(this,"Please Enter Customer Id to delete");
+               return;
+           }
+           
+           String resp=customerController.deleteCustomer(custId);
+           JOptionPane.showMessageDialog(this, resp);
+            clearForm();
+            loadTable(); // after deleting, load and update the table
+           
+       } catch (Exception ex) {
+           Logger.getLogger(CustomerView.class.getName()).log(Level.SEVERE, null, ex);
+           JOptionPane.showMessageDialog(this, "Error at delete Data.");
        }
    }
 }
