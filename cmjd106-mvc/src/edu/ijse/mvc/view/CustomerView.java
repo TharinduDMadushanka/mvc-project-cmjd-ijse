@@ -174,6 +174,11 @@ public class CustomerView extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        tblCustomer.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblCustomerMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(tblCustomer);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -311,6 +316,11 @@ public class CustomerView extends javax.swing.JFrame {
     private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnUpdateActionPerformed
+
+    private void tblCustomerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblCustomerMouseClicked
+        // TODO add your handling code here:
+        searchCustomer();
+    }//GEN-LAST:event_tblCustomerMouseClicked
 
     /**
      * @param args the command line arguments
