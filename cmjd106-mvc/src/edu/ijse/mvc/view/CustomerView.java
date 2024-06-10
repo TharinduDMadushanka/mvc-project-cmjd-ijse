@@ -367,6 +367,11 @@ public class CustomerView extends javax.swing.JFrame {
             Logger.getLogger(CustomerView.class.getName()).log(Level.SEVERE, null, ex);
         }      
     }
+    //Clear form after saving data
+    
+   private void clearForm(){
+       //txt
+   }
 }
 
 

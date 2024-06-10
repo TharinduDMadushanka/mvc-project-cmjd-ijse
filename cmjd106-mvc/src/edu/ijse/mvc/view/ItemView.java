@@ -355,7 +355,7 @@ public class ItemView extends javax.swing.JFrame {
         }
     }
     
-    private void searchItem() {
+    private void searchItem() { // show clicked data row
         try {
             String itemId = tblItem.getValueAt(tblItem.getSelectedRow(), 0).toString();
             ItemDto dto = itemController.searchItem(itemId);
