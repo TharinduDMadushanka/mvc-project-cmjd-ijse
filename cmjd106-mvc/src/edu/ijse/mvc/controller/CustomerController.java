@@ -5,6 +5,7 @@
 package edu.ijse.mvc.controller;
 
 import edu.ijse.mvc.dto.CustomerDto;
+import edu.ijse.mvc.dto.ItemDto;
 import edu.ijse.mvc.model.CustomerModel;
 import java.util.ArrayList;
 
@@ -34,6 +35,10 @@ public class CustomerController {
     }
     public String deleteCustomer(String custId) throws Exception{
         String resp = customerModel.deleteCustomer(custId);
+        return resp;
+    }
+    public String updateCustomer(CustomerDto customerDto)throws Exception{
+        String resp = customerModel.updateCustomer(customerDto);
         return resp;
     }
 }
