@@ -42,7 +42,7 @@ public class CustomerModel {
        return statement.executeUpdate() >0 ? "Success" : "Fail";
    }
    public ArrayList<CustomerDto> getAllCustomer()throws Exception{
-       String sql="GET * FROM customee";
+       String sql="SELECT * FROM customer";
        PreparedStatement statement=connection.prepareStatement(sql);
        ResultSet rst =statement.executeQuery();
        
