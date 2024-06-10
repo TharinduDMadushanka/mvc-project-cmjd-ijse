@@ -6,9 +6,11 @@ package edu.ijse.mvc.view;
 
 import edu.ijse.mvc.controller.CustomerController;
 import edu.ijse.mvc.dto.CustomerDto;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -23,6 +25,7 @@ public class CustomerView extends javax.swing.JFrame {
     public CustomerView() throws Exception {
         initComponents();
         customerController =new CustomerController();
+        loadTable();
     }
 
     /**
@@ -379,6 +382,7 @@ public class CustomerView extends javax.swing.JFrame {
             String resp =customerController.saveCustomer(dto);
             JOptionPane.showMessageDialog(this, resp);
             clearForm();
+            loadTable(); //after saving load and update the table
         } catch (Exception ex) {
             Logger.getLogger(CustomerView.class.getName()).log(Level.SEVERE, null, ex);
             JOptionPane.showMessageDialog(this, "Error at save data.");
@@ -396,6 +400,30 @@ public class CustomerView extends javax.swing.JFrame {
        txtCity.setText("");
        txtProvince.setText("");
        txtPostal.setText("");
+   }
+   
+   // show all data in db
+   private void loadTable(){
+   
+       try {
+           String [] columns={"CID","Title","Name","DOB","Salary","Address","City","Province","Post Code"};
+           DefaultTableModel dtm =new DefaultTableModel(columns,0){
+               
+               @Override
+            public boolean isCellEditable(int row,int column){// table rows editable disconnect
+                return false;
+            }
+           };
+           tblCustomer.setModel(dtm);
+           
+           ArrayList<CustomerDto> customerDtos=customerController.getAllCustomer();
+           for(CustomerDto dto: customerDtos){
+               Object[] rowData ={dto.getId(),dto.getTitle(),dto.getName(),dto.getDob(),dto.getSalary(),dto.getAddress(),dto.getCity(),dto.getProvince(),dto.getPostal()};
+               dtm.addRow(rowData);
+           }          
+       } catch (Exception e) {
+           JOptionPane.showMessageDialog(this, "Error at Loading Data to Customer Table");
+       }
    }
 }
 
