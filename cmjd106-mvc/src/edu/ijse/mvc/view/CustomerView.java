@@ -486,6 +486,23 @@ public class CustomerView extends javax.swing.JFrame {
            JOptionPane.showMessageDialog(this, "Error at delete Data.");
        }
    }
+   
+   private void updateCustomer(){
+   
+       try {
+           CustomerDto dto= new CustomerDto(txtId1.getText(),txtTitle.getText(),txtName.getText(),txtDob.getText(),
+                         Double.parseDouble(txtSalary.getText()),txtAddress.getText(),txtCity.getText(),txtProvince.getText(),
+                            txtPostal.getText());
+           
+           String resp=customerController.updateCustomer(dto);
+           JOptionPane.showMessageDialog(this, resp);
+            loadTable();
+            clearForm();
+                      
+       } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Error at update Customer.");
+       }
+   }
 }
 
 
