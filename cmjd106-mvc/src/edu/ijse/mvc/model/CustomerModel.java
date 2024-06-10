@@ -59,7 +59,7 @@ public class CustomerModel {
    
    public CustomerDto getCustomer(String customerId)throws Exception{
    
-       String sql = "DELETE FROM item WHERE CustID = ?";
+       String sql = "SELECT * FROM customer WHERE CustID = ?";
        PreparedStatement statement=connection.prepareStatement(sql);
        statement.setString(1, customerId);
        ResultSet rst = statement.executeQuery();
