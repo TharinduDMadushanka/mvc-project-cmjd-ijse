@@ -9,6 +9,8 @@ import edu.ijse.mvc.dto.CustomerDto;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
 
 
 /**
@@ -37,7 +39,18 @@ public class CustomerModel {
        statement.setString(8, customerDto.getProvince());
        statement.setString(9, customerDto.getPostal());
        
-      
        return statement.executeUpdate() >0 ? "Success" : "Fail";
    }
+//   public ArrayList<CustomerDto> getAllCustomer()throws Exception{
+//       String sql="GET * FROM customee";
+//       PreparedStatement statement=connection.prepareStatement(sql);
+//       ResultSet rst =statement.executeQuery();
+//       
+//       ArrayList<CustomerDto> customerDtos=new ArrayList<>();
+//       
+//       while (rst.next()) {           
+//           CustomerDto dto=new CustomerDto(rst.getString("Cus"));
+//       }
+//       
+//   }
 }
