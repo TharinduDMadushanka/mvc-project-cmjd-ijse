@@ -82,7 +82,7 @@ public class OrderView extends javax.swing.JFrame {
         });
 
         lblCustomerId.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblCustomerId.setText("Custoer ID");
+        lblCustomerId.setText("Customer ID");
 
         txtItemId.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
@@ -293,7 +293,7 @@ public class OrderView extends javax.swing.JFrame {
             CustomerDto customerDto=customerController.searchCustomer(custId);
             if(custId!=null){
             
-                lblCustDeatail.setText(customerDto.getId()+" | "+customerDto.getTitle()+". "+customerDto.getName()+" | ");
+                lblCustDeatail.setText(customerDto.getId()+" | "+customerDto.getTitle()+". "+customerDto.getName()+" | "+customerDto.getCity());
             }else{
             
                 lblCustDeatail.setText("Customer not found!");
