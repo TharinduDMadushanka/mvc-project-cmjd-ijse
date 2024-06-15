@@ -9,6 +9,7 @@ import edu.ijse.mvc.controller.ItemController;
 import edu.ijse.mvc.dto.CustomerDto;
 import edu.ijse.mvc.dto.ItemDto;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -26,6 +27,7 @@ public class OrderView extends javax.swing.JFrame {
         itemController=new ItemController();
         customerController=new CustomerController();
         initComponents();
+        loadTable();
     }
 
     /**
@@ -56,6 +58,7 @@ public class OrderView extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         tblOrder = new javax.swing.JTable();
         jSeparator1 = new javax.swing.JSeparator();
+        btnAddOrder = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -118,6 +121,9 @@ public class OrderView extends javax.swing.JFrame {
 
         jSeparator1.setForeground(new java.awt.Color(51, 51, 51));
 
+        btnAddOrder.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnAddOrder.setText("Place Order");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -160,6 +166,10 @@ public class OrderView extends javax.swing.JFrame {
                                 .addComponent(lblItemDetails, javax.swing.GroupLayout.PREFERRED_SIZE, 471, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(33, 33, 33))))
             .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnAddOrder, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -192,9 +202,11 @@ public class OrderView extends javax.swing.JFrame {
                     .addComponent(lblQty, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtQty, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnAdd))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
+                .addGap(26, 26, 26)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(46, 46, 46))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
+                .addComponent(btnAddOrder, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         pack();
@@ -247,6 +259,7 @@ public class OrderView extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAdd;
+    private javax.swing.JButton btnAddOrder;
     private javax.swing.JButton btnSearchCust;
     private javax.swing.JButton btnSearchId;
     private javax.swing.JScrollPane jScrollPane1;
@@ -281,7 +294,7 @@ public class OrderView extends javax.swing.JFrame {
             }
         } catch (Exception e) {
             e.printStackTrace();
-            JOptionPane.showMessageDialog(this, "Item not found!");
+            JOptionPane.showMessageDialog(this, "Error at search Item!");
         }
         
     }
@@ -300,7 +313,20 @@ public class OrderView extends javax.swing.JFrame {
             }
         } catch (Exception e) {
             e.printStackTrace();
-            JOptionPane.showMessageDialog(this, "Customer not found!");
+            JOptionPane.showMessageDialog(this, "Error at search Customer!");
         }
+    }
+    
+    private void loadTable(){
+    
+        String column[]={"Item Code","Qty","Discount"};
+        DefaultTableModel dtm =new DefaultTableModel(column,0){
+        
+            public boolean isCellEditable(int row,int column){
+            
+                return false;
+            }
+        };
+        tblOrder.setModel(dtm);
     }
 }
