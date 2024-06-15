@@ -35,7 +35,7 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="lblDiscount" alignment="1" max="32767" attributes="0"/>
                           <Component id="lblOrderId" alignment="0" max="32767" attributes="0"/>
-                          <Component id="lblCustomerId1" alignment="0" max="32767" attributes="0"/>
+                          <Component id="lblCustomerId" alignment="0" max="32767" attributes="0"/>
                           <Component id="lblItemId" alignment="0" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
@@ -87,7 +87,7 @@
                   <Component id="txtCustomerId" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
                   <Component id="btnSearchCust" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="lblCustDeatail" alignment="0" min="-2" pref="31" max="-2" attributes="0"/>
-                  <Component id="lblCustomerId1" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
+                  <Component id="lblCustomerId" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
               <Component id="jSeparator1" min="-2" pref="15" max="-2" attributes="0"/>
@@ -165,7 +165,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="lblCustDeatail">
     </Component>
-    <Component class="javax.swing.JLabel" name="lblCustomerId1">
+    <Component class="javax.swing.JLabel" name="lblCustomerId">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="14" style="1"/>

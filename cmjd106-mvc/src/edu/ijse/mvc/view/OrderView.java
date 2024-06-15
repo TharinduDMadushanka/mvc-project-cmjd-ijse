@@ -33,7 +33,7 @@ public class OrderView extends javax.swing.JFrame {
         txtOrderId = new javax.swing.JTextField();
         btnSearchCust = new javax.swing.JButton();
         lblCustDeatail = new javax.swing.JLabel();
-        lblCustomerId1 = new javax.swing.JLabel();
+        lblCustomerId = new javax.swing.JLabel();
         txtItemId = new javax.swing.JTextField();
         btnSearchId = new javax.swing.JButton();
         lblItemDetails = new javax.swing.JLabel();
@@ -65,8 +65,8 @@ public class OrderView extends javax.swing.JFrame {
         btnSearchCust.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnSearchCust.setText("Search");
 
-        lblCustomerId1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblCustomerId1.setText("Custoer ID");
+        lblCustomerId.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lblCustomerId.setText("Custoer ID");
 
         txtItemId.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
@@ -117,7 +117,7 @@ public class OrderView extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblDiscount, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(lblOrderId, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(lblCustomerId1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(lblCustomerId, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(lblItemId, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -159,7 +159,7 @@ public class OrderView extends javax.swing.JFrame {
                     .addComponent(txtCustomerId, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnSearchCust)
                     .addComponent(lblCustDeatail, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblCustomerId1, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblCustomerId, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(26, 26, 26)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -230,7 +230,7 @@ public class OrderView extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JLabel lblCustDeatail;
-    private javax.swing.JLabel lblCustomerId1;
+    private javax.swing.JLabel lblCustomerId;
     private javax.swing.JLabel lblDiscount;
     private javax.swing.JLabel lblItemDetails;
     private javax.swing.JLabel lblItemId;
