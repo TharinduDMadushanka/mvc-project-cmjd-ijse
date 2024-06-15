@@ -4,10 +4,17 @@
  */
 package edu.ijse.mvc.controller;
 
+import edu.ijse.mvc.dto.OrderDetailDto;
+import edu.ijse.mvc.dto.OrderDto;
+import java.util.ArrayList;
+
 /**
  *
  * @author ASUS
  */
 public class OrderController {
     
+    public String placeOrder(OrderDto orderDto, ArrayList<OrderDetailDto> orderDetailDtos) throws Exception{
+        return null;
+    }
 }
