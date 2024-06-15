@@ -4,16 +4,23 @@
  */
 package edu.ijse.mvc.view;
 
+import edu.ijse.mvc.controller.ItemController;
+import edu.ijse.mvc.dto.ItemDto;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author ASUS
  */
 public class OrderView extends javax.swing.JFrame {
+    
+    private ItemController itemController;
 
     /**
      * Creates new form OrderView
      */
-    public OrderView() {
+    public OrderView() throws Exception {
+        itemController=new ItemController();
         initComponents();
     }
 
@@ -186,6 +193,7 @@ public class OrderView extends javax.swing.JFrame {
 
     private void btnSearchIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchIdActionPerformed
         // TODO add your handling code here:
+        searchItem();
     }//GEN-LAST:event_btnSearchIdActionPerformed
 
     /**
@@ -244,4 +252,24 @@ public class OrderView extends javax.swing.JFrame {
     private javax.swing.JTextField txtOrderId;
     private javax.swing.JTextField txtQty;
     // End of variables declaration//GEN-END:variables
+
+    private void searchItem(){
+    
+        try {
+            String itemId=txtItemId.getText();
+            ItemDto itemDto=itemController.searchItem(itemId);
+            if(itemDto!=null){
+            
+                lblItemDetails.setText(itemDto.getCode()+" | "+itemDto.getDescription()+" | "+itemDto.getQoh()+" | "+itemDto.getUnitPrice());
+            }else{
+            
+                lblItemDetails.setText("Item not found.");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(this, "Item not found.");
+        }
+        
+    }
+
 }
