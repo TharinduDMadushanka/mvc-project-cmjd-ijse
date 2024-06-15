@@ -291,7 +291,7 @@ public class OrderView extends javax.swing.JFrame {
         try {
             String custId=txtCustomerId.getText();
             CustomerDto customerDto=customerController.searchCustomer(custId);
-            if(custId!=null){
+            if(customerDto!=null){
             
                 lblCustDeatail.setText(customerDto.getId()+" | "+customerDto.getTitle()+". "+customerDto.getName()+" | "+customerDto.getCity());
             }else{
