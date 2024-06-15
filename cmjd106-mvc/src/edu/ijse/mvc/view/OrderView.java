@@ -6,10 +6,14 @@ package edu.ijse.mvc.view;
 
 import edu.ijse.mvc.controller.CustomerController;
 import edu.ijse.mvc.controller.ItemController;
+import edu.ijse.mvc.controller.OrderController;
 import edu.ijse.mvc.dto.CustomerDto;
 import edu.ijse.mvc.dto.ItemDto;
 import edu.ijse.mvc.dto.OrderDetailDto;
+import edu.ijse.mvc.dto.OrderDto;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -22,6 +26,7 @@ public class OrderView extends javax.swing.JFrame {
     private ItemController itemController;
     private CustomerController customerController;
     private ArrayList<OrderDetailDto> orderDetailDtos;
+    private OrderController orderController;
 
     /**
      * Creates new form OrderView
@@ -29,6 +34,7 @@ public class OrderView extends javax.swing.JFrame {
     public OrderView() throws Exception {
         itemController=new ItemController();
         customerController=new CustomerController();
+        orderController=new OrderController();
         orderDetailDtos=new ArrayList<>();
         initComponents();
         loadTable();
@@ -132,6 +138,11 @@ public class OrderView extends javax.swing.JFrame {
 
         btnAddOrder.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnAddOrder.setText("Place Order");
+        btnAddOrder.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAddOrderActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -235,6 +246,11 @@ public class OrderView extends javax.swing.JFrame {
         // TODO add your handling code here:
         addToTable();
     }//GEN-LAST:event_btnAddActionPerformed
+
+    private void btnAddOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddOrderActionPerformed
+        // TODO add your handling code here:
+        placeOrder();
+    }//GEN-LAST:event_btnAddOrderActionPerformed
 
     /**
      * @param args the command line arguments
@@ -363,4 +379,25 @@ public class OrderView extends javax.swing.JFrame {
         lblItemDetails.setText("");
 
     }
+     
+     private void placeOrder(){
+     
+         try {
+             OrderDto orderDto=new OrderDto();
+             orderDto.setOrderId(txtOrderId.getText());
+             orderDto.setCustId(txtCustomerId.getText());
+             
+             SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
+             String date =sdf.format(new Date());
+             orderDto.setDate(date);
+             
+             String resp=orderController.placeOrder(orderDto, orderDetailDtos);
+             JOptionPane.showMessageDialog(this, resp);
+             
+         } catch (Exception e) {
+             e.printStackTrace();
+            JOptionPane.showMessageDialog(this, "Error at Order Save!");
+         }
+         
+     }
 }
