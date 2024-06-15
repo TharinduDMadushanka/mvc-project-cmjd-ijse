@@ -4,7 +4,9 @@
  */
 package edu.ijse.mvc.view;
 
+import edu.ijse.mvc.controller.CustomerController;
 import edu.ijse.mvc.controller.ItemController;
+import edu.ijse.mvc.dto.CustomerDto;
 import edu.ijse.mvc.dto.ItemDto;
 import javax.swing.JOptionPane;
 
@@ -15,12 +17,14 @@ import javax.swing.JOptionPane;
 public class OrderView extends javax.swing.JFrame {
     
     private ItemController itemController;
+    private CustomerController customerController;
 
     /**
      * Creates new form OrderView
      */
     public OrderView() throws Exception {
         itemController=new ItemController();
+        customerController=new CustomerController();
         initComponents();
     }
 
@@ -71,6 +75,11 @@ public class OrderView extends javax.swing.JFrame {
 
         btnSearchCust.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnSearchCust.setText("Search");
+        btnSearchCust.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSearchCustActionPerformed(evt);
+            }
+        });
 
         lblCustomerId.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lblCustomerId.setText("Custoer ID");
@@ -196,6 +205,11 @@ public class OrderView extends javax.swing.JFrame {
         searchItem();
     }//GEN-LAST:event_btnSearchIdActionPerformed
 
+    private void btnSearchCustActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchCustActionPerformed
+        // TODO add your handling code here:
+        searchCustomer();
+    }//GEN-LAST:event_btnSearchCustActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -263,13 +277,30 @@ public class OrderView extends javax.swing.JFrame {
                 lblItemDetails.setText(itemDto.getCode()+" | "+itemDto.getDescription()+" | "+itemDto.getQoh()+" | "+itemDto.getUnitPrice());
             }else{
             
-                lblItemDetails.setText("Item not found.");
+                lblItemDetails.setText("Item not found!");
             }
         } catch (Exception e) {
             e.printStackTrace();
-            JOptionPane.showMessageDialog(this, "Item not found.");
+            JOptionPane.showMessageDialog(this, "Item not found!");
         }
         
     }
 
+    private void searchCustomer(){
+    
+        try {
+            String custId=txtCustomerId.getText();
+            CustomerDto customerDto=customerController.searchCustomer(custId);
+            if(custId!=null){
+            
+                lblCustDeatail.setText(customerDto.getId()+" | "+customerDto.getTitle()+". "+customerDto.getName()+" | ");
+            }else{
+            
+                lblCustDeatail.setText("Customer not found!");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(this, "Customer not found!");
+        }
+    }
 }
