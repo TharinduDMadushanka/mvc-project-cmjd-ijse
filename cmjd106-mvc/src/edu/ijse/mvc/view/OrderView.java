@@ -8,6 +8,8 @@ import edu.ijse.mvc.controller.CustomerController;
 import edu.ijse.mvc.controller.ItemController;
 import edu.ijse.mvc.dto.CustomerDto;
 import edu.ijse.mvc.dto.ItemDto;
+import edu.ijse.mvc.dto.OrderDetailDto;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -19,6 +21,7 @@ public class OrderView extends javax.swing.JFrame {
     
     private ItemController itemController;
     private CustomerController customerController;
+    private ArrayList<OrderDetailDto> orderDetailDtos;
 
     /**
      * Creates new form OrderView
@@ -26,6 +29,7 @@ public class OrderView extends javax.swing.JFrame {
     public OrderView() throws Exception {
         itemController=new ItemController();
         customerController=new CustomerController();
+        orderDetailDtos=new ArrayList<>();
         initComponents();
         loadTable();
     }
@@ -105,6 +109,11 @@ public class OrderView extends javax.swing.JFrame {
 
         btnAdd.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnAdd.setText("Add");
+        btnAdd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAddActionPerformed(evt);
+            }
+        });
 
         tblOrder.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -222,6 +231,11 @@ public class OrderView extends javax.swing.JFrame {
         searchCustomer();
     }//GEN-LAST:event_btnSearchCustActionPerformed
 
+    private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
+        // TODO add your handling code here:
+        addToTable();
+    }//GEN-LAST:event_btnAddActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -328,5 +342,25 @@ public class OrderView extends javax.swing.JFrame {
             }
         };
         tblOrder.setModel(dtm);
+    }
+    
+    private void addToTable() {
+        OrderDetailDto orderDetailDto = new OrderDetailDto(null, txtItemId.getText(),
+                Integer.parseInt(txtQty.getText()),
+                Integer.parseInt(txtDiscount.getText()));
+        orderDetailDtos.add(orderDetailDto);
+
+        Object[] rowData = {orderDetailDto.getItemCode(), orderDetailDto.getQty(), orderDetailDto.getDiscount()}; 
+        DefaultTableModel dtm = (DefaultTableModel) tblOrder.getModel();
+        dtm.addRow(rowData);
+        cleanItem();
+    }
+    
+     private void cleanItem(){
+        txtItemId.setText("");
+        txtDiscount.setText("");
+        txtQty.setText("");
+        lblItemDetails.setText("");
+
     }
 }
