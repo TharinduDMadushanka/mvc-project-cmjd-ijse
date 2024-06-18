@@ -23,6 +23,7 @@ public class OrderController {
     }
     
     public String placeOrder(OrderDto orderDto, ArrayList<OrderDetailDto> orderDetailDtos) throws Exception{
-        return null;
+        
+        return orderModel.placeOrder(orderDto, orderDetailDtos);
     }
 }
