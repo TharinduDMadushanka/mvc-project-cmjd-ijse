@@ -4,6 +4,7 @@
  */
 package edu.ijse.mvc.model;
 
+import java.sql.Connection;
 import edu.ijse.mvc.db.DBConnection;
 /**
  *
@@ -11,5 +12,10 @@ import edu.ijse.mvc.db.DBConnection;
  */
 public class OrderModel {
     
+    private Connection connection;
     
+    public OrderModel() throws Exception{
+    
+        connection=DBConnection.getInstance().getConnection();
+    }
 }

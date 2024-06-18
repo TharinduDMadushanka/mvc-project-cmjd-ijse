@@ -88,11 +88,13 @@
                   <Component id="txtOrderId" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="txtCustomerId" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
-                  <Component id="btnSearchCust" alignment="3" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="lblCustDeatail" alignment="0" min="-2" pref="31" max="-2" attributes="0"/>
-                  <Component id="lblCustomerId" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="txtCustomerId" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
+                      <Component id="btnSearchCust" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblCustomerId" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
+                  </Group>
               </Group>
               <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
               <Component id="jSeparator1" min="-2" pref="15" max="-2" attributes="0"/>
