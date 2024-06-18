@@ -10,6 +10,7 @@ import edu.ijse.mvc.dto.OrderDetailDto;
 import edu.ijse.mvc.dto.OrderDto;
 import java.util.ArrayList;
 import java.sql.PreparedStatement;
+import java.sql.SQLException;
 /**
  *
  * @author ASUS
@@ -18,7 +19,7 @@ public class OrderModel {
     
     private Connection connection;
     
-    public OrderModel() throws Exception{
+    public OrderModel() throws  ClassNotFoundException, SQLException{
     
         connection=DBConnection.getInstance().getConnection();
     }
@@ -43,7 +44,7 @@ public class OrderModel {
                 String orderDetailSql = "INSERT INTO orderdetail VALUES(?,?,?,?)";
                 for(OrderDetailDto orderDetailDto : orderDetailDtos){
                 
-                    PreparedStatement orderDetailsStatement = connection.prepareStatement(orderSql);
+                    PreparedStatement orderDetailsStatement = connection.prepareStatement(orderDetailSql);
                     orderDetailsStatement.setString(1,orderDto.getOrderId());
                     orderDetailsStatement.setString(2,orderDetailDto.getItemCode());
                     orderDetailsStatement.setInt(3,orderDetailDto.getQty());
@@ -99,6 +100,6 @@ public class OrderModel {
         } finally {
             connection.setAutoCommit(true);
         }
-        return "Success";
+        return "Success all";
     }
 }
